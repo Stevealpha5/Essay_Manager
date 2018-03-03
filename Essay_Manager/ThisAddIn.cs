@@ -11,13 +11,15 @@ namespace Essay_Manager
 {
     public partial class ThisAddIn
     {
-        private UserControl1 UserControl;
-        public static Microsoft.Office.Tools.CustomTaskPane myCustomTaskPane;
+        private SourceWindow UserControl;
+        public static Microsoft.Office.Tools.CustomTaskPane sourceTaskPane;
+
+        public static Source[] sources = new Source[250];
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            UserControl = new UserControl1();
-            myCustomTaskPane = this.CustomTaskPanes.Add(UserControl, "My Task Pane");
+            UserControl = new SourceWindow();
+            sourceTaskPane = this.CustomTaskPanes.Add(UserControl, "My Task Pane");
            
         }
 

@@ -16,7 +16,13 @@ namespace Essay_Manager
 
         private void button1_Click(object sender, RibbonControlEventArgs e)
         {
-            ThisAddIn.myCustomTaskPane.Visible = true;
+            ThisAddIn.sourceTaskPane.Visible = !ThisAddIn.sourceTaskPane.Visible;
+        }
+
+        private void addSourceButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            NewSourceWindow window = new NewSourceWindow();
+            window.Visible = true;
         }
     }
 }
