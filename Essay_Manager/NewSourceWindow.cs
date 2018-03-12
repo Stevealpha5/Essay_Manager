@@ -34,7 +34,31 @@ namespace Essay_Manager
                 }
             }
 
+            SourceWindow.sourceListBox.Items.Clear();
+
+            for (int i = 0; i < ThisAddIn.sources.Length; i++)
+            {
+                if (ThisAddIn.sources[i] != null)
+                {
+                    SourceWindow.sourceListBox.Items.Add(ThisAddIn.sources[i].getURL());
+                }
+                else
+                {
+                    break;
+                }
+            }
+
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewSourceWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

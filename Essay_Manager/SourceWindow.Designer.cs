@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.sourceWebBrowser = new System.Windows.Forms.WebBrowser();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.sourceListBox = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // sourceWebBrowser
@@ -70,6 +72,12 @@
             this.sourceListBox.TabIndex = 2;
             this.sourceListBox.SelectedIndexChanged += new System.EventHandler(this.sourceListBox_SelectedIndexChanged);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
             // SourceWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -80,6 +88,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "SourceWindow";
             this.Size = new System.Drawing.Size(633, 517);
+            this.Load += new System.EventHandler(this.SourceWindow_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,6 +99,7 @@
         private System.Windows.Forms.WebBrowser sourceWebBrowser;
         private System.Windows.Forms.Button SearchBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ListBox sourceListBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.ListBox sourceListBox;
     }
 }

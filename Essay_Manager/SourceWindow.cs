@@ -24,21 +24,10 @@ namespace Essay_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string url = "www.google.com";
-
-            for (int i = 0; i < ThisAddIn.sources.Length; i++)
-            {
-                if (ThisAddIn.sources[i] != null)
-                {
-                    url = ThisAddIn.sources[i].getURL();
-                    break;
-                }
-            }
-
-            sourceListBox.Items.Add(url);
-            
-
-            sourceWebBrowser.Navigate(sourceListBox.SelectedIndex.ToString());
+            string url = "file:///C:/Users/Christopher/Documents/Programing/Stanford/CS%20106A/The%20Art%20and%20Science%20of%20Java.pdf";
+              
+            if(sourceListBox.SelectedItem != null)
+                sourceWebBrowser.Navigate(sourceListBox.SelectedItem.ToString());
         }
 
         private void SourceWindow_Load(object sender, EventArgs e)
@@ -58,6 +47,20 @@ namespace Essay_Manager
             {
                 MessageBox.Show(index.ToString());
             }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SourceWindow_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
