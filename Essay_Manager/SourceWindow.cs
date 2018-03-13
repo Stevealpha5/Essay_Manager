@@ -24,10 +24,23 @@ namespace Essay_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string url = "file:///C:/Users/Christopher/Documents/Programing/Stanford/CS%20106A/The%20Art%20and%20Science%20of%20Java.pdf";
-              
-            if(sourceListBox.SelectedItem != null)
-                sourceWebBrowser.Navigate(sourceListBox.SelectedItem.ToString());
+
+
+            if (sourceListBox.SelectedItem != null)
+            {
+                int indexNumber = -1; 
+                for (int i = 0; i < ThisAddIn.sources.Length; i++)
+                {
+                    if (sourceListBox.SelectedItem.ToString().Equals(ThisAddIn.sources[i].getDisplayName()))
+                    {
+                        indexNumber = i;
+                        break;
+                    }
+                }
+
+                if(indexNumber != -1)
+                    sourceWebBrowser.Navigate(ThisAddIn.sources[indexNumber].url);
+            }
         }
 
         private void SourceWindow_Load(object sender, EventArgs e)

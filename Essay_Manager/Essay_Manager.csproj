@@ -162,6 +162,9 @@
     <Compile Include="NewSourceWindow.Designer.cs">
       <DependentUpon>NewSourceWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlaceHolderTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

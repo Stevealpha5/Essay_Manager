@@ -11,17 +11,22 @@ using System.Windows.Forms;
 namespace Essay_Manager
 {
     public partial class NewSourceWindow : Form
-    { 
+    {
+        string articalTitleFiller;
+        string urlFiller;
+        string authorFirstFiller;
+        string authorMiddleFiller;
+        string authorLastFiller;
+        string dayFiller;
+        string monthFiller;
+        string yearFiller;
+        string publisherFiller;
 
         public NewSourceWindow()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void addSourceButton_Click(object sender, EventArgs e)
         {
@@ -29,7 +34,24 @@ namespace Essay_Manager
             {
                 if (ThisAddIn.sources[i] == null)
                 {
-                    ThisAddIn.sources[i] = new Source(UrlField.Text);
+                    ThisAddIn.sources[i] = new Source();
+
+                    ThisAddIn.sources[i].url = UrlField.Text;
+                    ThisAddIn.sources[i].title = articalTitle.Text;
+
+                    ThisAddIn.sources[i].authorFirst = authorFirst.Text;
+                    ThisAddIn.sources[i].authorLast = authorLast.Text;
+                    ThisAddIn.sources[i].authorMiddle = authorMiddle.Text;
+
+                    ThisAddIn.sources[i].day = datePublishedDay.Text;
+                    ThisAddIn.sources[i].month = datePublishedMonth.Text;
+                    ThisAddIn.sources[i].year = datePublishedYear.Text;
+
+                    ThisAddIn.sources[i].publisher = publisher.Text;
+
+                    if (ThisAddIn.sources[i].getDisplayName() == null)
+                        ThisAddIn.sources[i] = null;
+
                     break;
                 }
             }
@@ -40,7 +62,7 @@ namespace Essay_Manager
             {
                 if (ThisAddIn.sources[i] != null)
                 {
-                    SourceWindow.sourceListBox.Items.Add(ThisAddIn.sources[i].getURL());
+                    SourceWindow.sourceListBox.Items.Add(ThisAddIn.sources[i].getDisplayName());
                 }
                 else
                 {
@@ -51,14 +73,12 @@ namespace Essay_Manager
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void NewSourceWindow_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+       
     }
 }
