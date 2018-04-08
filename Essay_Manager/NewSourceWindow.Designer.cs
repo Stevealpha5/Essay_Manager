@@ -76,7 +76,7 @@
             this.articalTitle.ForeColor = System.Drawing.Color.Gray;
             this.articalTitle.Location = new System.Drawing.Point(12, 38);
             this.articalTitle.Name = "articalTitle";
-            this.articalTitle.PlaceHolderText = "test";
+            this.articalTitle.PlaceHolderText = "Artical Title";
             this.articalTitle.Size = new System.Drawing.Size(242, 20);
             this.articalTitle.TabIndex = 0;
             this.articalTitle.Text = "Artical Title";

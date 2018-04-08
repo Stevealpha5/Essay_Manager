@@ -12,16 +12,6 @@ namespace Essay_Manager
 {
     public partial class NewSourceWindow : Form
     {
-        string articalTitleFiller;
-        string urlFiller;
-        string authorFirstFiller;
-        string authorMiddleFiller;
-        string authorLastFiller;
-        string dayFiller;
-        string monthFiller;
-        string yearFiller;
-        string publisherFiller;
-
         public NewSourceWindow()
         {
             InitializeComponent();
@@ -49,26 +39,14 @@ namespace Essay_Manager
 
                     ThisAddIn.sources[i].publisher = publisher.Text;
 
-                    if (ThisAddIn.sources[i].getDisplayName() == null)
+                    if (ThisAddIn.sources[i].ToString() == null)
                         ThisAddIn.sources[i] = null;
 
                     break;
                 }
             }
 
-            SourceWindow.sourceListBox.Items.Clear();
-
-            for (int i = 0; i < ThisAddIn.sources.Length; i++)
-            {
-                if (ThisAddIn.sources[i] != null)
-                {
-                    SourceWindow.sourceListBox.Items.Add(ThisAddIn.sources[i].getDisplayName());
-                }
-                else
-                {
-                    break;
-                }
-            }
+            Utils.updateSources();
 
             this.Close();
         }

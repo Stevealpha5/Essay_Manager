@@ -68,5 +68,14 @@ namespace Essay_Manager
         {
             removePlaceHolder();
         }
+
+        public void setText(string text)
+        {
+            isPlaceHolder = false;
+            this.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Font = new Font(this.Font, FontStyle.Regular);
+            base.Text = text;
+
+        }
     }
 }

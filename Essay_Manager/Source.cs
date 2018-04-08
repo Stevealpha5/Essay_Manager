@@ -27,9 +27,10 @@ namespace Essay_Manager
           
         }
 
-        public string getDisplayName()
+        public override string ToString()
         {
-            if (title != "" )
+
+            if (title != "")
                 return title;
 
             if (url != "")
@@ -39,10 +40,10 @@ namespace Essay_Manager
                 return publisher;
 
             if (authorFirst + authorMiddle + authorLast != "" + "" + "")
-                return authorLast + " " + authorFirst + " " + authorMiddle;
+                return Utils.cleanWhiteSpace(authorLast + " " + authorFirst + " " + authorMiddle);
 
             if (day + month + year != "" + "" + "")
-                return day + " " + month + " " + year;
+                return Utils.cleanWhiteSpace(day + " " + month + " " + year);
 
             return null;
         }

@@ -156,6 +156,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="EditSourceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSourceWindow.Designer.cs">
+      <DependentUpon>EditSourceWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewSourceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,10 @@
     <Compile Include="SourceWindow.Designer.cs">
       <DependentUpon>SourceWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="EditSourceWindow.resx">
+      <DependentUpon>EditSourceWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewSourceWindow.resx">
       <DependentUpon>NewSourceWindow.cs</DependentUpon>
     </EmbeddedResource>

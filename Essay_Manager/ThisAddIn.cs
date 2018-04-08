@@ -20,6 +20,7 @@ namespace Essay_Manager
         {
             UserControl = new SourceWindow();
             sourceTaskPane = this.CustomTaskPanes.Add(UserControl, "My Task Pane");
+            sourceTaskPane.Width = 645;
            
         }
 
