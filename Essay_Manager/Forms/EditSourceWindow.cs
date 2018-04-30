@@ -13,12 +13,14 @@ namespace Essay_Manager
     public partial class EditSourceWindow : Form
     {
         private Source source;
+        private ListBox listBox;
 
-        public EditSourceWindow(Source source)
+        public EditSourceWindow(Source source, ListBox listBox)
         {
             InitializeComponent();
-
+            timer1.Start();
             this.source = source;
+            this.listBox = listBox;
         }
 
         private void EditSourceWindow_Load(object sender, EventArgs e)
@@ -53,9 +55,25 @@ namespace Essay_Manager
             source.publisher = publisher.Text;
 
             Utils.updateSources();
+            Utils.updateSources(listBox);
 
             this.Close();
 
+        }
+
+        private void MouseEnter(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Focus();     
         }
     }
 }

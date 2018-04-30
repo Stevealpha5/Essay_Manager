@@ -8,16 +8,16 @@ namespace Essay_Manager
 {
     public class Source
     {
-        public string url;
-        public string title;
+        public string url = "";
+        public string title = "";
 
-        public string authorFirst; 
-        public string authorMiddle; 
-        public string authorLast; 
+        public string authorFirst = "";
+        public string authorMiddle = "";
+        public string authorLast = "";
 
-        public string day; 
-        public string month; 
-        public string year; 
+        public string day = "";
+        public string month = "";
+        public string year = "";
 
         public string publisher; 
 

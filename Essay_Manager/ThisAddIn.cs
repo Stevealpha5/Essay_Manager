@@ -15,17 +15,21 @@ namespace Essay_Manager
         public static Microsoft.Office.Tools.CustomTaskPane sourceTaskPane;
 
         public static Source[] sources = new Source[250];
-
+        public static string saveLocation = "test.xml";
+        
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             UserControl = new SourceWindow();
-            sourceTaskPane = this.CustomTaskPanes.Add(UserControl, "My Task Pane");
+            sourceTaskPane = this.CustomTaskPanes.Add(UserControl, "Source Window");
             sourceTaskPane.Width = 645;
-           
+
+            Utils.populatSourceListArray(XML.loadSourceArray(ThisAddIn.saveLocation));
+            Utils.updateSources();
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+            XML.saveData(ThisAddIn.sources, ThisAddIn.saveLocation);
         }
 
         #region VSTO generated code

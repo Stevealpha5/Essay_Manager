@@ -116,11 +116,10 @@
             // 
             // articalTitleLable
             // 
-            this.articalTitleLable.AutoSize = true;
             this.articalTitleLable.ForeColor = System.Drawing.Color.Red;
             this.articalTitleLable.Location = new System.Drawing.Point(25, 41);
             this.articalTitleLable.Name = "articalTitleLable";
-            this.articalTitleLable.Size = new System.Drawing.Size(75, 13);
+            this.articalTitleLable.Size = new System.Drawing.Size(129, 13);
             this.articalTitleLable.TabIndex = 6;
             this.articalTitleLable.Text = "No data found";
             // 
@@ -135,11 +134,10 @@
             // 
             // locationLable
             // 
-            this.locationLable.AutoSize = true;
             this.locationLable.ForeColor = System.Drawing.Color.Red;
             this.locationLable.Location = new System.Drawing.Point(26, 95);
             this.locationLable.Name = "locationLable";
-            this.locationLable.Size = new System.Drawing.Size(75, 13);
+            this.locationLable.Size = new System.Drawing.Size(128, 13);
             this.locationLable.TabIndex = 7;
             this.locationLable.Text = "No data found";
             // 
@@ -154,11 +152,10 @@
             // 
             // authorNameLable
             // 
-            this.authorNameLable.AutoSize = true;
             this.authorNameLable.ForeColor = System.Drawing.Color.Red;
-            this.authorNameLable.Location = new System.Drawing.Point(25, 139);
+            this.authorNameLable.Location = new System.Drawing.Point(26, 139);
             this.authorNameLable.Name = "authorNameLable";
-            this.authorNameLable.Size = new System.Drawing.Size(75, 13);
+            this.authorNameLable.Size = new System.Drawing.Size(112, 13);
             this.authorNameLable.TabIndex = 9;
             this.authorNameLable.Text = "No data found";
             // 
@@ -173,11 +170,10 @@
             // 
             // datePublishedLable
             // 
-            this.datePublishedLable.AutoSize = true;
             this.datePublishedLable.ForeColor = System.Drawing.Color.Red;
             this.datePublishedLable.Location = new System.Drawing.Point(160, 41);
             this.datePublishedLable.Name = "datePublishedLable";
-            this.datePublishedLable.Size = new System.Drawing.Size(75, 13);
+            this.datePublishedLable.Size = new System.Drawing.Size(140, 13);
             this.datePublishedLable.TabIndex = 11;
             this.datePublishedLable.Text = "No data found";
             // 
@@ -192,16 +188,16 @@
             // 
             // publisherLable
             // 
-            this.publisherLable.AutoSize = true;
             this.publisherLable.ForeColor = System.Drawing.Color.Red;
             this.publisherLable.Location = new System.Drawing.Point(160, 95);
             this.publisherLable.Name = "publisherLable";
-            this.publisherLable.Size = new System.Drawing.Size(75, 13);
+            this.publisherLable.Size = new System.Drawing.Size(140, 13);
             this.publisherLable.TabIndex = 13;
             this.publisherLable.Text = "No data found";
             // 
             // sourceInfoPanel
             // 
+            this.sourceInfoPanel.AutoScroll = true;
             this.sourceInfoPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.sourceInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sourceInfoPanel.Controls.Add(this.deleteSourceButton);
@@ -223,16 +219,17 @@
             // 
             // deleteSourceButton
             // 
-            this.deleteSourceButton.Location = new System.Drawing.Point(202, 134);
+            this.deleteSourceButton.Location = new System.Drawing.Point(225, 134);
             this.deleteSourceButton.Name = "deleteSourceButton";
             this.deleteSourceButton.Size = new System.Drawing.Size(75, 23);
             this.deleteSourceButton.TabIndex = 18;
             this.deleteSourceButton.Text = "Delete";
             this.deleteSourceButton.UseVisualStyleBackColor = true;
+            this.deleteSourceButton.Click += new System.EventHandler(this.deleteSourceButton_Click);
             // 
             // editSourceButton
             // 
-            this.editSourceButton.Location = new System.Drawing.Point(121, 134);
+            this.editSourceButton.Location = new System.Drawing.Point(144, 134);
             this.editSourceButton.Name = "editSourceButton";
             this.editSourceButton.Size = new System.Drawing.Size(75, 23);
             this.editSourceButton.TabIndex = 17;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.datePublishedLable = new System.Windows.Forms.Label();
             this.authorNameLable = new System.Windows.Forms.Label();
             this.addSourceButton = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.authorFirst = new Essay_Manager.PlaceHolderTextBox();
             this.UrlField = new Essay_Manager.PlaceHolderTextBox();
             this.articalTitle = new Essay_Manager.PlaceHolderTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // datePublishedLable
@@ -69,6 +71,8 @@
             this.addSourceButton.Text = "Update Source";
             this.addSourceButton.UseVisualStyleBackColor = true;
             this.addSourceButton.Click += new System.EventHandler(this.addSourceButton_Click);
+            this.addSourceButton.MouseEnter += new System.EventHandler(this.MouseEnter);
+            this.addSourceButton.MouseLeave += new System.EventHandler(this.MouseLeave);
             // 
             // publisher
             // 
@@ -169,6 +173,10 @@
             this.articalTitle.TabIndex = 1;
             this.articalTitle.Text = "Artical Title";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // EditSourceWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,7 +194,10 @@
             this.Controls.Add(this.datePublishedLable);
             this.Controls.Add(this.authorNameLable);
             this.Controls.Add(this.addSourceButton);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditSourceWindow";
+            this.ShowIcon = false;
             this.Text = "Edit Source";
             this.Load += new System.EventHandler(this.EditSourceWindow_Load);
             this.ResumeLayout(false);
@@ -208,5 +219,6 @@
         private System.Windows.Forms.Label datePublishedLable;
         private System.Windows.Forms.Label authorNameLable;
         private System.Windows.Forms.Button addSourceButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -156,19 +156,37 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="EditSourceWindow.cs">
+    <Compile Include="Forms\DeleteConformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditSourceWindow.Designer.cs">
+    <Compile Include="Forms\DeleteConformation.Designer.cs">
+      <DependentUpon>DeleteConformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteSourceStandAlone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteSourceStandAlone.Designer.cs">
+      <DependentUpon>DeleteSourceStandAlone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditSourceStandAlone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditSourceStandAlone.Designer.cs">
+      <DependentUpon>EditSourceStandAlone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditSourceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditSourceWindow.Designer.cs">
       <DependentUpon>EditSourceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewSourceWindow.cs">
+    <Compile Include="Forms\NewSourceWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewSourceWindow.Designer.cs">
+    <Compile Include="Forms\NewSourceWindow.Designer.cs">
       <DependentUpon>NewSourceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlaceHolderTextBox.cs">
+    <Compile Include="Utilities\PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source.cs" />
@@ -181,11 +199,21 @@
     <Compile Include="SourceWindow.Designer.cs">
       <DependentUpon>SourceWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="EditSourceWindow.resx">
+    <Compile Include="Utilities\XML.cs" />
+    <Compile Include="Utilities\Utils.cs" />
+    <EmbeddedResource Include="Forms\DeleteConformation.resx">
+      <DependentUpon>DeleteConformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteSourceStandAlone.resx">
+      <DependentUpon>DeleteSourceStandAlone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditSourceStandAlone.resx">
+      <DependentUpon>EditSourceStandAlone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditSourceWindow.resx">
       <DependentUpon>EditSourceWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewSourceWindow.resx">
+    <EmbeddedResource Include="Forms\NewSourceWindow.resx">
       <DependentUpon>NewSourceWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -227,6 +255,16 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\DeleteIcon.png" />
+    <Content Include="Icons\EditIcon.png" />
+    <Content Include="Icons\LoadIcon.png" />
+    <Content Include="Icons\OpenIcon.png" />
+    <Content Include="Icons\PlusIcon.png" />
+    <Content Include="Icons\SaveIcon.png" />
+    <Content Include="Icons\SettingsIcon.png" />
+    <Content Include="Icons\TrashIcon.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

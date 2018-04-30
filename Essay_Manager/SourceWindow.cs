@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Essay_Manager
 {
@@ -24,7 +25,7 @@ namespace Essay_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Utils.updateSources();
         }
         
       
@@ -67,7 +68,7 @@ namespace Essay_Manager
                 return;
             }
 
-            EditSourceWindow editSourceWindow = new EditSourceWindow((Source)sourceListBox.SelectedItem);
+            EditSourceWindow editSourceWindow = new EditSourceWindow((Source)sourceListBox.SelectedItem, sourceListBox);
             editSourceWindow.Visible = true;
         }
 
@@ -97,6 +98,24 @@ namespace Essay_Manager
         private void sourceWebBrowser_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        private void deleteSourceButton_Click(object sender, EventArgs e)
+        {
+            if (sourceListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Error: Please select a source");
+                return;
+            }
+
+            DeleteConformation confermation = new DeleteConformation((Source)sourceListBox.SelectedItem, sourceListBox);
+            confermation.Visible = true;
+            confermation.Focus();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }
